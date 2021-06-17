@@ -12,6 +12,8 @@ import static com.QuickSort.*;
 
 import static com.BubbleSort.*;
 
+import static com.InsertionSort.*;
+
 public class Main {
 
     // GLOBAL VARIABLE
@@ -46,17 +48,20 @@ public class Main {
         /*checkRecursive();
         System.out.println();*/
 
-        // MERGE SORT
-        /*checkMergeSort(N, arr1000);*/
-
         //SELECTION SORT
         /*checkSelectionSort(N, arr1000);*/
+
+        // BUBBLE SORT
+        /*checkBubbleSort(N, arr1000);*/
+
+        // INSERTION SORT
+        checkInsertionSort(N, arr1000);
 
         // QUICK SORT
         /*checkQuickSort(N, arr1000);*/
 
-        // BUBBLE SORT
-        checkBubbleSort(N, arr1000);
+        // MERGE SORT
+        /*checkMergeSort(N, arr1000);*/
 
     }
 }

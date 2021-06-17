@@ -89,7 +89,9 @@ public class MergeSort {
         System.out.println();
     }
 
-    public static void checkMergeSort(int N, int[] arr) {
+    // Driver method
+    public static void checkMergeSort(int N, int[] arr)
+    {
         //! Get Start Time
         long startTime = System.nanoTime();
 
