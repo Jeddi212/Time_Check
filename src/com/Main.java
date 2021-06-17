@@ -6,6 +6,8 @@ package com;
 
 import static com.MergeSort.*;
 
+import static com.SelectionSort.*;
+
 public class Main {
 
     // GLOBAL VARIABLE
@@ -41,7 +43,12 @@ public class Main {
         System.out.println();*/
 
         // MERGE SORT
-        checkMergeSort(N, arr1000);
+        /*checkMergeSort(N, arr1000);*/
+
+        //SELECTION SORT
+        /*checkSelectionSort(N, arr1000);*/
+
+
 
     }
 }
