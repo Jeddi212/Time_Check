@@ -4,15 +4,19 @@ package com;
 
 //import static com.Recursive.*;
 
-import static com.MergeSort.*;
-
 import static com.SelectionSort.*;
-
-import static com.QuickSort.*;
 
 import static com.BubbleSort.*;
 
 import static com.InsertionSort.*;
+
+import static com.HeapSort.*;
+
+import static com.QuickSort.*;
+
+import static com.MergeSort.*;
+
+import static com.BucketSort.*;
 
 public class Main {
 
@@ -55,13 +59,19 @@ public class Main {
         /*checkBubbleSort(N, arr1000);*/
 
         // INSERTION SORT
-        checkInsertionSort(N, arr1000);
+        /*checkInsertionSort(N, arr1000);*/
+
+        // HEAP SORT
+        /*checkHeapSort(N, arr1000);*/
 
         // QUICK SORT
         /*checkQuickSort(N, arr1000);*/
 
         // MERGE SORT
         /*checkMergeSort(N, arr1000);*/
+
+        // BUCKET SORT
+        /*checkBucketSort(N);*/
 
     }
 }
