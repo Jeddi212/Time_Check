@@ -8,6 +8,8 @@ import static com.MergeSort.*;
 
 import static com.SelectionSort.*;
 
+import static com.QuickSort.*;
+
 public class Main {
 
     // GLOBAL VARIABLE
@@ -48,7 +50,8 @@ public class Main {
         //SELECTION SORT
         /*checkSelectionSort(N, arr1000);*/
 
-
+        // QUICK SORT
+        checkQuickSort(N, arr1000);
 
     }
 }

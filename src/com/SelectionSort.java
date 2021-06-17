@@ -46,7 +46,7 @@ public class SelectionSort {
         //! Get Start Time
         long startTime = System.nanoTime();
 
-        //! Loop Merge Sort
+        //! Loop Selection Sort
         for (int i = 0; i < N; i++) {
             sort(arr);
         }
