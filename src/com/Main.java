@@ -10,6 +10,8 @@ import static com.SelectionSort.*;
 
 import static com.QuickSort.*;
 
+import static com.BubbleSort.*;
+
 public class Main {
 
     // GLOBAL VARIABLE
@@ -51,7 +53,10 @@ public class Main {
         /*checkSelectionSort(N, arr1000);*/
 
         // QUICK SORT
-        checkQuickSort(N, arr1000);
+        /*checkQuickSort(N, arr1000);*/
+
+        // BUBBLE SORT
+        checkBubbleSort(N, arr1000);
 
     }
 }
