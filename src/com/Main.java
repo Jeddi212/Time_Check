@@ -18,6 +18,8 @@ import static com.MergeSort.*;
 
 import static com.BucketSort.*;
 
+import static com.RadixSort.*;
+
 public class Main {
 
     // GLOBAL VARIABLE
@@ -72,6 +74,9 @@ public class Main {
 
         // BUCKET SORT
         /*checkBucketSort(N);*/
+
+        // RADIX SORT
+        checkRadixSort(N, arr1000);
 
     }
 }
