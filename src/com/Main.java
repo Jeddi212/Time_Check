@@ -5,6 +5,7 @@ import static com.Loop.ForWhile.*;
 import static com.Recursive.Recursive.*;
 
 import static com.Search.BinarySearch.*;
+import static com.Search.Graph.*;
 import static com.Search.JumpSearch.*;
 import static com.Sort.BubbleSort.*;
 import static com.Sort.BucketSort.*;
@@ -78,10 +79,16 @@ public class Main {
         /*checkRadixSort(N, arr1000);*/
 
         // BINARY SEARCH
-        checkBinarySearch(N, larr1000, 10);
+        /*checkBinarySearch(N, larr1000, 10);*/
 
         // JUMP SEARCH
-        checkJumpSearch(N, larr1000, 10);
+        /*checkJumpSearch(N, larr1000, 10);*/
+
+        // DEPTH FIRST SEARCH
+        checkDFS();
+
+        // BREADTH FIRST SEARCH
+        checkBFS();
 
     }
 }
