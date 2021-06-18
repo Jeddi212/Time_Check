@@ -24,7 +24,7 @@ public class BucketSort {
         Vector<Float>[] buckets = new Vector[n];
 
         for (int i = 0; i < n; i++) {
-            buckets[i] = new Vector<Float>();
+            buckets[i] = new Vector<>();
         }
 
         // 2) Put array elements in different buckets

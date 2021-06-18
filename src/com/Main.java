@@ -79,16 +79,16 @@ public class Main {
         /*checkRadixSort(N, arr1000);*/
 
         // BINARY SEARCH
-        /*checkBinarySearch(N, larr1000, 10);*/
+        /*checkBinarySearch(N, larr1000, 0);*/
 
         // JUMP SEARCH
-        /*checkJumpSearch(N, larr1000, 10);*/
+        /*checkJumpSearch(N, larr1000, 0);*/
 
         // DEPTH FIRST SEARCH
-        checkDFS();
+        /*checkDFS(N);*/
 
         // BREADTH FIRST SEARCH
-        checkBFS();
+        /*checkBFS(N);*/
 
     }
 }

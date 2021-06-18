@@ -35,7 +35,7 @@ public class Graph
     {
         // Mark the current node as visited and print it
         visited[v] = true;
-        System.out.print(v + " ");
+//        System.out.print(v + " ");
 
         // Recur for all the vertices adjacent to this
         // vertex
@@ -69,7 +69,7 @@ public class Graph
         boolean[] visited = new boolean[V];
 
         // Create a queue for BFS
-        LinkedList<Integer> queue = new LinkedList<Integer>();
+        LinkedList<Integer> queue = new LinkedList<>();
 
         // Mark the current node as visited and enqueue it
         visited[s]=true;
@@ -79,7 +79,7 @@ public class Graph
         {
             // Dequeue a vertex from queue and print it
             s = queue.poll();
-            System.out.print(s+" ");
+//            System.out.print(s+" ");
 
             // Get all adjacent vertices of the dequeued vertex s
             // If a adjacent has not been visited, then mark it
@@ -94,7 +94,7 @@ public class Graph
     }
 
     // Driver method to DFS
-    public static void checkDFS()
+    public static void checkDFS(int N)
     {
         Graph g = new Graph(4);
 
@@ -109,7 +109,24 @@ public class Graph
                 "Following is Depth First Traversal " +
                 "(starting from vertex 2)");
 
-        g.DFS(2);
+        //! Get Start Time
+        long startTime = System.nanoTime();
+
+        for (int i = 0; i < N; i++) {
+            g.DFS(2);
+        }
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah titik = " + g.adj.length);
+        System.out.println("Jumlah loop  = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses DFS = " + (timeElapsed / N) + " NanoSecond");
+
 
         System.out.println();
         System.out.println();
@@ -117,7 +134,7 @@ public class Graph
     }
 
     // Driver method to BFS
-    public static void checkBFS()
+    public static void checkBFS(int N)
     {
         Graph g = new Graph(4);
 
@@ -132,7 +149,22 @@ public class Graph
                 "Following is Breadth First Traversal "+
                 "(starting from vertex 2)");
 
-        g.BFS(2);
+        //! Get Start Time
+        long startTime = System.nanoTime();
+        for (int i = 0; i < N; i++) {
+            g.BFS(2);
+        }
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah titik = " + g.adj.length);
+        System.out.println("Jumlah loop  = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses BSF = " + (timeElapsed / N) + " NanoSecond");
 
         System.out.println();
         System.out.println();

@@ -24,8 +24,7 @@ public class MergeSort {
         int[] R = new int[n2];
 
         /*Copy data to temp arrays*/
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
+        System.arraycopy(arr, l, L, 0, n1);
         for (int j = 0; j < n2; ++j)
             R[j] = arr[m + 1 + j];
 
@@ -78,15 +77,6 @@ public class MergeSort {
             // Merge the sorted halves
             merge(arr, l, m, r);
         }
-    }
-
-    /* A utility function to print array of size n */
-    static void printArray(int[] arr)
-    {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
     }
 
     // Driver method

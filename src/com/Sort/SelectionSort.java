@@ -31,15 +31,6 @@ public class SelectionSort {
         }
     }
 
-    // Prints the array
-    void printArray(int[] arr)
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
-        System.out.println();
-    }
-
     // Driver code to test above
     public static void checkSelectionSort(int N, int[] arr)
     {

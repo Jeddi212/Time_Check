@@ -5,8 +5,7 @@
 */
 package com.Sort;
 
-import java.io.*;
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * @author Jeddi
@@ -25,7 +24,7 @@ public class RadixSort {
 
     // A function to do counting sort of arr[] according to
     // the digit represented by exp.
-    static void countSort(int arr[], int n, int exp)
+    static void countSort(int[] arr, int n, int exp)
     {
         int[] output = new int[n]; // output array
         int i;
@@ -55,7 +54,7 @@ public class RadixSort {
 
     // The main function to that sorts arr[] of size n using
     // Radix Sort
-    static void radixsort(int arr[], int n)
+    static void radixsort(int[] arr, int n)
     {
         // Find the maximum number to know number of digits
         int m = getMax(arr, n);
@@ -65,13 +64,6 @@ public class RadixSort {
         // exp is 10^i where i is current digit number
         for (int exp = 1; m / exp > 0; exp *= 10)
             countSort(arr, n, exp);
-    }
-
-    // A utility function to print an array
-    static void print(int[] arr, int n)
-    {
-        for (int i = 0; i < n; i++)
-            System.out.print(arr[i] + " ");
     }
 
     /*Driver Code*/
