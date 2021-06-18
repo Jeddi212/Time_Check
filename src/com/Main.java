@@ -76,7 +76,7 @@ public class Main {
         /*checkBucketSort(N);*/
 
         // RADIX SORT
-        checkRadixSort(N, arr1000);
+        /*checkRadixSort(N, arr1000);*/
 
     }
 }
