@@ -1,24 +1,17 @@
 package com;
 
-//import static com.ForWhile.*;
+//import static com.Loop.ForWhile.*;
 
-//import static com.Recursive.*;
+//import static com.Recursive.Recursive.*;
 
-import static com.SelectionSort.*;
-
-import static com.BubbleSort.*;
-
-import static com.InsertionSort.*;
-
-import static com.HeapSort.*;
-
-import static com.QuickSort.*;
-
-import static com.MergeSort.*;
-
-import static com.BucketSort.*;
-
-import static com.RadixSort.*;
+import static com.Sort.BubbleSort.*;
+import static com.Sort.BucketSort.*;
+import static com.Sort.HeapSort.*;
+import static com.Sort.InsertionSort.*;
+import static com.Sort.MergeSort.*;
+import static com.Sort.QuickSort.*;
+import static com.Sort.RadixSort.*;
+import static com.Sort.SelectionSort.*;
 
 public class Main {
 
