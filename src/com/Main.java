@@ -170,7 +170,14 @@ public class Main {
         // ROTATE IMAGE
         printArr(rarr9);
         System.out.println();
-        printArr(rotateImage(rarr9));
+
+        checkRotate1(N, rarr9);
+        System.out.println();
+//        printArr(rotateImage(rarr9));
+
+        checkRotate2(N, rarr9);
+        System.out.println();
+//        printArr(rotateImage2(rarr9));
 
     }
 }
