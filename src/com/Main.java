@@ -1,21 +1,6 @@
 package com;
 
-import static com.Loop.ForWhile.*;
-
-import static com.Recursive.Recursive.*;
-
-import static com.Rotate.RotateImage.*;
-import static com.Search.BinarySearch.*;
-import static com.Search.Graph.*;
-import static com.Search.JumpSearch.*;
-import static com.Sort.BubbleSort.*;
-import static com.Sort.BucketSort.*;
-import static com.Sort.HeapSort.*;
-import static com.Sort.InsertionSort.*;
-import static com.Sort.MergeSort.*;
-import static com.Sort.QuickSort.*;
-import static com.Sort.RadixSort.*;
-import static com.Sort.SelectionSort.*;
+import static com.Detect.ObjDetect.*;
 
 public class Main {
 
@@ -110,6 +95,27 @@ public class Main {
             {9,9,9,9,9,9,9,9,9},
     };
 
+    static
+    int[][] warr4 = {
+            {1,1,0,0},
+            {1,0,1,0},
+            {0,1,0,1},
+            {1,0,0,1},
+    };
+
+    static
+    int[][] warr9 = {
+            {1,1,1,1,1,1,1,1,1},
+            {1,0,0,0,0,0,0,1,1},
+            {1,0,0,0,0,0,1,0,1},
+            {1,0,0,0,0,1,0,0,1},
+            {1,0,0,0,1,0,0,0,1},
+            {1,0,0,1,0,0,0,0,1},
+            {1,0,1,0,0,0,0,0,1},
+            {1,1,0,0,0,0,0,0,1},
+            {1,1,1,1,1,1,1,1,1},
+    };
+
     // PRINT MEMORY USAGE
     private static void printMemory() {
         // Get the Java runtime
@@ -168,7 +174,7 @@ public class Main {
         /*checkBFS(N);*/
 
         // ROTATE IMAGE
-        printArr(rarr9);
+        /*printArr(rarr9);
         System.out.println();
 
         checkRotate1(N, rarr9);
@@ -177,7 +183,10 @@ public class Main {
 
         checkRotate2(N, rarr9);
         System.out.println();
-//        printArr(rotateImage2(rarr9));
+//        printArr(rotateImage2(rarr9));*/
+
+        // OBJECT DETECT ARRAY
+        objDetect(warr9);
 
     }
 }
