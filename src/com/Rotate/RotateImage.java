@@ -169,4 +169,12 @@ public class RotateImage {
 
     }
 
+/*    checkClockwise(N, rarr9);
+        System.out.println();
+//        printArr(clockwise(rarr9));
+
+    checkAntiClockwise(N, rarr9);
+        System.out.println();
+//        printArr(antiClockwise(rarr9));*/
+
 }

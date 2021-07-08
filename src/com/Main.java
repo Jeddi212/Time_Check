@@ -179,15 +179,7 @@ public class Main {
 
         checkRotate1(N, rarr9);
         System.out.println();
-//        printArr(rotateImage(rarr9));
-
-        checkClockwise(N, rarr9);
-        System.out.println();
-//        printArr(clockwise(rarr9));
-
-        checkAntiClockwise(N, rarr9);
-        System.out.println();
-//        printArr(antiClockwise(rarr9));
+        printArr(rotateImage(rarr9));
 
         /*// OBJECT DETECT ARRAY
         objDetect(warr9);*/
