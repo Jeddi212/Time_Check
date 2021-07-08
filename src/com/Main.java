@@ -1,6 +1,6 @@
 package com;
 
-import static com.Detect.ObjDetect.*;
+import static com.Rotate.RotateImage.*;
 
 public class Main {
 
@@ -174,19 +174,23 @@ public class Main {
         /*checkBFS(N);*/
 
         // ROTATE IMAGE
-        /*printArr(rarr9);
+        printArr(rarr9);
         System.out.println();
 
         checkRotate1(N, rarr9);
         System.out.println();
 //        printArr(rotateImage(rarr9));
 
-        checkRotate2(N, rarr9);
+        checkClockwise(N, rarr9);
         System.out.println();
-//        printArr(rotateImage2(rarr9));*/
+//        printArr(clockwise(rarr9));
 
-        // OBJECT DETECT ARRAY
-        objDetect(warr9);
+        checkAntiClockwise(N, rarr9);
+        System.out.println();
+//        printArr(antiClockwise(rarr9));
+
+        /*// OBJECT DETECT ARRAY
+        objDetect(warr9);*/
 
     }
 }

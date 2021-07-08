@@ -38,7 +38,7 @@ public class RotateImage {
     }
 
     // Method Rotate Image 2
-    public static int[][] rotateImage2(int[][] matrix)
+    public static int[][] clockwise(int[][] matrix)
     {
         int first, last, offset, temp;
         int N = matrix.length;
@@ -58,6 +58,32 @@ public class RotateImage {
                 matrix[swapRound][last] = temp;
             }
 
+        }
+
+        return matrix;
+    }
+
+    public static int[][] antiClockwise(int[][] matrix)
+    {
+        int i, j, temp;
+        int N = matrix.length;
+
+        for (i = 0; i < N / 2; i++) {
+            for (j = i; j < N - i - 1; j++) {
+                temp = matrix[i][j];
+
+                // Move values from right to top
+                matrix[i][j] = matrix[j][N - 1 - i];
+
+                // Move values from bottom to right
+                matrix[j][N - 1 - i] = matrix[N - 1 - i][N - 1 - j];
+
+                // Move values from left to bottom
+                matrix[N - 1 - i][N - 1 - j] = matrix[N - 1 - j][i];
+
+                // Assign temp to left
+                matrix[N - 1 - j][i] = temp;
+            }
         }
 
         return matrix;
@@ -97,14 +123,14 @@ public class RotateImage {
 
     }
 
-    public static void checkRotate2(int N, int[][] arr)
+    public static void checkClockwise(int N, int[][] arr)
     {
         //! Get Start Time
         long startTime = System.nanoTime();
 
         //! Loop Bubble Sort
         for (int i = 0; i < N; i++) {
-            rotateImage2(arr);
+            clockwise(arr);
         }
 
         //! Get Finish Time
@@ -117,6 +143,29 @@ public class RotateImage {
         System.out.println("Jumlah loop = " + N);
         System.out.println("-------------------------------------------");
         System.out.println("Lama Proses Rotate 2 = " + (timeElapsed / N) + " NanoSecond");
+
+    }
+
+    public static void checkAntiClockwise(int N, int[][] arr)
+    {
+        //! Get Start Time
+        long startTime = System.nanoTime();
+
+        //! Loop Bubble Sort
+        for (int i = 0; i < N; i++) {
+            antiClockwise(arr);
+        }
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah data = " + arr.length);
+        System.out.println("Jumlah loop = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses Rotate 3 = " + (timeElapsed / N) + " NanoSecond");
 
     }
 
