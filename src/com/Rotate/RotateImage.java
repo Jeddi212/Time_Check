@@ -11,7 +11,7 @@ package com.Rotate;
 public class RotateImage {
 
     // Method Rotate Image
-    public static int[][] rotateImage(int[][] matrix)
+    public static int[][] rotateKanan(int[][] matrix)
     {
         int temp, i, j;
         int N = matrix.length;
@@ -31,6 +31,32 @@ public class RotateImage {
                 temp = matrix[i][j];
                 matrix[i][j] = matrix[i][N-1-j];
                 matrix[i][N-1-j] = temp;
+            }
+        }
+
+        return matrix;
+    }
+
+    public static int[][] rotateKiri(int[][] matrix)
+    {
+        int temp, i, j;
+        int N = matrix.length;
+
+        // Langkah 1 : Flip matrix dari kiri ke kanan
+        for (i = 0; i < N; i++) {
+            for (j = 0; j < (N / 2); j++) {
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[i][N-1-j];
+                matrix[i][N-1-j] = temp;
+            }
+        }
+
+        // Langkah 2 : Transpose Matrix
+        for (i = 0; i < N; i++) {
+            for (j = (i + 1); j < N; j++) {
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
             }
         }
 
@@ -100,14 +126,37 @@ public class RotateImage {
         }
     }
 
-    public static void checkRotate1(int N, int[][] arr)
+    public static void checkRotateKanan(int N, int[][] arr)
     {
         //! Get Start Time
         long startTime = System.nanoTime();
 
         //! Loop Bubble Sort
         for (int i = 0; i < N; i++) {
-            rotateImage(arr);
+            rotateKanan(arr);
+        }
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah data = " + arr.length);
+        System.out.println("Jumlah loop = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses Rotate 1 = " + (timeElapsed / N) + " NanoSecond");
+
+    }
+
+    public static void checkRotateKiri(int N, int[][] arr)
+    {
+        //! Get Start Time
+        long startTime = System.nanoTime();
+
+        //! Loop Bubble Sort
+        for (int i = 0; i < N; i++) {
+            rotateKiri(arr);
         }
 
         //! Get Finish Time

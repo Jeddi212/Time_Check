@@ -177,9 +177,9 @@ public class Main {
         printArr(rarr9);
         System.out.println();
 
-        checkRotate1(N, rarr9);
+        checkRotateKanan(N, rarr9);
         System.out.println();
-        printArr(rotateImage(rarr9));
+        printArr(rotateKanan(rarr9));
 
         /*// OBJECT DETECT ARRAY
         objDetect(warr9);*/
