@@ -14,6 +14,7 @@ public class ObjDetect {
         int i, j, hasil = 0;
 
         boolean cek = true;
+        boolean already = true;
 
         for (i = 0; i < arr.length; i++) {
             for (j = 0; j < arr[i].length; j++) {
@@ -27,10 +28,32 @@ public class ObjDetect {
                     } else if (j == 0) {
                         if (arr[i-1][j] != 1) {
                             hasil++;
+//                            while (cek && j < arr[i].length - 1) {
+//                                if (arr[i][j + 1] == 1) {
+//                                    if (arr[i - 1][j + 1] == 1) {
+//                                        if (!already) {
+//                                            hasil--;
+//                                            already = true;
+//                                        }
+//                                    } else {
+//                                        already = false;
+//                                    }
+//                                } else {
+//                                    cek = false;
+//                                }
+//                                j++;
+//                            }
+//                            cek = true;
+                        }/* else if (arr[i][j + 1] == 1) {
                             while (cek && j < arr[i].length - 1) {
                                 if (arr[i][j + 1] == 1) {
                                     if (arr[i - 1][j + 1] == 1) {
-                                        hasil--;
+                                        if (!already) {
+                                            hasil--;
+                                            already = true;
+                                        }
+                                    } else {
+                                        already = false;
                                     }
                                 } else {
                                     cek = false;
@@ -38,14 +61,19 @@ public class ObjDetect {
                                 j++;
                             }
                             cek = true;
-                        }
+                        }*/
                     } else {
                         if (arr[i-1][j] != 1 && arr[i][j-1] != 1) {
                             hasil++;
                             while (cek && j < arr[i].length - 1) {
                                 if (arr[i][j + 1] == 1) {
                                     if (arr[i - 1][j + 1] == 1) {
-                                        hasil--;
+                                        if (!already) {
+                                            hasil--;
+                                            already = true;
+                                        }
+                                    } else {
+                                        already = false;
                                     }
                                 } else {
                                     cek = false;
@@ -53,10 +81,31 @@ public class ObjDetect {
                                 j++;
                             }
                             cek = true;
+                        } else if (j < arr[i].length - 1) {
+                            if (arr[i][j + 1] == 1) {
+                                while (cek && j < arr[i].length - 1) {
+                                    if (arr[i][j + 1] == 1) {
+                                        if (arr[i - 1][j + 1] == 1) {
+                                            if (!already) {
+                                                hasil--;
+                                                already = true;
+                                            }
+                                        } else {
+                                            already = false;
+                                        }
+                                    } else {
+                                        cek = false;
+                                    }
+                                    j++;
+                                }
+                                cek = true;
+                            }
                         }
+                        already = false;
                     }
                 }
             }
+//            already = false;
         }
 
         System.out.println(
