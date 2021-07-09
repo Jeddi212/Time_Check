@@ -5,6 +5,10 @@
 */
 package com.Detect;
 
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * @author jeddi
  */
@@ -97,6 +101,70 @@ public class ObjDetect {
                 "Banyak objek \n" +
                 "dalam array  = " + hasil
         );
+    }
+
+    public static void objKel3(int[][] arr_grid) {
+        int rows = arr_grid.length;
+        int cols = arr_grid[0].length;
+
+        int total = rows * cols;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (arr_grid[i][j] == 1) {
+                    arr_grid[i][j] = total;
+                    total = total - 1;
+                }
+            }
+        }
+
+        boolean cek = false;
+
+        while (!cek) {
+            cek = true;
+
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    int row_next = i + 1;
+                    int row_prev = i - 1;
+                    int col_next = j + 1;
+                    int col_prev = j +-1;
+
+                    if (arr_grid[i][j] != 0) {
+                        if (row_prev >= 0 && arr_grid[row_prev][j] > arr_grid[i][j]) {
+                            arr_grid[i][j] = arr_grid[row_prev][j];
+                            cek = false;
+                        }
+                        if (col_prev >= 0 && arr_grid[i][col_prev] > arr_grid[i][j]) {
+                            arr_grid[i][j] = arr_grid[i][col_prev];
+                            cek = false;
+                        }
+                        if (row_next < rows && arr_grid[row_next][j] > arr_grid[i][j]) {
+                            arr_grid[i][j] = arr_grid[row_next][j];
+                            cek = false;
+                        }
+                        if (col_next < cols && arr_grid[i][col_next] > arr_grid[i][j]) {
+                            arr_grid[i][j] = arr_grid[i][col_next];
+                            cek = false;
+                        }
+                    }
+                    System.out.print(arr_grid[i][j] + " ");
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+
+        Set<Integer> hashSet = new HashSet<>();
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                hashSet.add(arr_grid[i][j]);
+            }
+        }
+        System.out.println("\nBanyak = " + (hashSet.size() - 1));
     }
 
 }

@@ -1,6 +1,7 @@
 package com;
 
 import static com.Detect.ObjDetect.objDetect;
+import static com.Detect.ObjDetect.objKel3;
 import static com.Rotate.RotateImage.*;
 
 public class Main {
@@ -233,8 +234,8 @@ public class Main {
             {0, 1, 1, 1, 1, 0},
             {0, 1, 1, 1, 1, 0},
             {0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 0},
+            {0, 0, 1, 1, 0, 0},
             {0, 0, 0, 0, 0, 0}
     };
 
@@ -253,9 +254,9 @@ public class Main {
     int[][] warr8 = {
             {0, 0, 0, 0, 0, 0},
             {1, 1, 1, 1, 1, 1},
-            {1, 0, 0, 0, 0, 1},
-            {1, 1, 1, 1, 1, 1},
-            {1, 0, 0, 0, 0, 1},
+            {1, 0, 0, 1, 0, 1},
+            {1, 0, 0, 1, 0, 1},
+            {1, 0, 0, 1, 0, 1},
             {1, 1, 1, 1, 1, 1},
             {0, 0, 0, 0, 0, 0}
     };
@@ -373,6 +374,7 @@ public class Main {
 
         // OBJECT DETECT ARRAY
         objDetect(warr8);
+        objKel3(warr1);
 
     }
 }
