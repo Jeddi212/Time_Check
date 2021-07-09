@@ -118,13 +118,26 @@ public class Main {
     };
 
     static
-    int[][] warr1 = {{1, 1, 0, 1, 0, 0},
+    int[][] warr1 = {
+            {1, 1, 0, 1, 0, 0},
             {0, 0, 0, 1, 0, 0},
             {0, 0, 1, 1, 0, 0},
             {1, 0, 0, 0, 0, 0},
             {1, 1, 0, 1, 0, 1},
             {1, 0, 0, 0, 0, 0},
-            {1, 1, 0, 1, 1, 0}};
+            {1, 1, 0, 1, 1, 0}
+    };
+
+    static
+    int[][] warr2 = {
+            {1, 1, 0, 0, 1, 0},
+            {0, 0, 0, 0, 1, 0},
+            {0, 1, 1, 1, 1, 0},
+            {1, 0, 0, 0, 0, 0},
+            {1, 1, 0, 1, 0, 1},
+            {1, 0, 0, 0, 0, 0},
+            {1, 1, 0, 1, 1, 0}
+    };
 
     // PRINT MEMORY USAGE
     private static void printMemory() {
@@ -192,7 +205,7 @@ public class Main {
 //        printArr(rotateKanan(rarr9));
 
         // OBJECT DETECT ARRAY
-        objDetect(warr9);
+        objDetect(warr1);
 
     }
 }

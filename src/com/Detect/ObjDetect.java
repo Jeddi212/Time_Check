@@ -41,18 +41,16 @@ public class ObjDetect {
                         }
                     } else {
                         if (arr[i-1][j] != 1 && arr[i][j-1] != 1) {
-                            if (arr[i-1][j] != 1) {
-                                hasil++;
-                                while (cek && j < arr.length) {
-                                    j++;
-                                    if (arr[i][j] == 1) {
-                                        if (arr[i - 1][j] == 1) {
-                                            hasil--;
-                                            cek = false;
-                                        }
-                                    } else {
+                            hasil++;
+                            while (cek && j < arr.length) {
+                                j++;
+                                if (arr[i][j] == 1) {
+                                    if (arr[i - 1][j] == 1) {
+                                        hasil--;
                                         cek = false;
                                     }
+                                } else {
+                                    cek = false;
                                 }
                             }
                         }
