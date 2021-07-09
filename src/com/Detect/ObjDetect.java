@@ -28,40 +28,7 @@ public class ObjDetect {
                     } else if (j == 0) {
                         if (arr[i-1][j] != 1) {
                             hasil++;
-//                            while (cek && j < arr[i].length - 1) {
-//                                if (arr[i][j + 1] == 1) {
-//                                    if (arr[i - 1][j + 1] == 1) {
-//                                        if (!already) {
-//                                            hasil--;
-//                                            already = true;
-//                                        }
-//                                    } else {
-//                                        already = false;
-//                                    }
-//                                } else {
-//                                    cek = false;
-//                                }
-//                                j++;
-//                            }
-//                            cek = true;
-                        }/* else if (arr[i][j + 1] == 1) {
-                            while (cek && j < arr[i].length - 1) {
-                                if (arr[i][j + 1] == 1) {
-                                    if (arr[i - 1][j + 1] == 1) {
-                                        if (!already) {
-                                            hasil--;
-                                            already = true;
-                                        }
-                                    } else {
-                                        already = false;
-                                    }
-                                } else {
-                                    cek = false;
-                                }
-                                j++;
-                            }
-                            cek = true;
-                        }*/
+                        }
                     } else {
                         if (arr[i-1][j] != 1 && arr[i][j-1] != 1) {
                             hasil++;
@@ -86,6 +53,9 @@ public class ObjDetect {
                                 while (cek && j < arr[i].length - 1) {
                                     if (arr[i][j + 1] == 1) {
                                         if (arr[i - 1][j + 1] == 1) {
+                                            if (arr[i - 1][j] == 1) {
+                                                already = true;
+                                            }
                                             if (!already) {
                                                 hasil--;
                                                 already = true;
@@ -105,7 +75,6 @@ public class ObjDetect {
                     }
                 }
             }
-//            already = false;
         }
 
         System.out.println(
