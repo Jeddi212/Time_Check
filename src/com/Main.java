@@ -1,5 +1,6 @@
 package com;
 
+import static com.Detect.ObjDetect.objDetect;
 import static com.Rotate.RotateImage.*;
 
 public class Main {
@@ -116,6 +117,15 @@ public class Main {
             {1,1,1,1,1,1,1,1,1},
     };
 
+    static
+    int[][] warr1 = {{1, 1, 0, 1, 0, 0},
+            {0, 0, 0, 1, 0, 0},
+            {0, 0, 1, 1, 0, 0},
+            {1, 0, 0, 0, 0, 0},
+            {1, 1, 0, 1, 0, 1},
+            {1, 0, 0, 0, 0, 0},
+            {1, 1, 0, 1, 1, 0}};
+
     // PRINT MEMORY USAGE
     private static void printMemory() {
         // Get the Java runtime
@@ -174,15 +184,15 @@ public class Main {
         /*checkBFS(N);*/
 
         // ROTATE IMAGE
-        printArr(rarr9);
-        System.out.println();
+//        printArr(rarr9);
+//        System.out.println();
+//
+//        checkRotateKanan(N, rarr9);
+//        System.out.println();
+//        printArr(rotateKanan(rarr9));
 
-        checkRotateKanan(N, rarr9);
-        System.out.println();
-        printArr(rotateKanan(rarr9));
-
-        /*// OBJECT DETECT ARRAY
-        objDetect(warr9);*/
+        // OBJECT DETECT ARRAY
+        objDetect(warr9);
 
     }
 }

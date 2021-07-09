@@ -13,6 +13,8 @@ public class ObjDetect {
     public static void objDetect(int[][] arr) {
         int i, j, hasil = 0;
 
+        boolean cek = true;
+
         for (i = 0; i < arr.length; i++) {
             for (j = 0; j < arr[i].length; j++) {
                 if (arr[i][j] == 1) {
@@ -25,10 +27,34 @@ public class ObjDetect {
                     } else if (j == 0) {
                         if (arr[i-1][j] != 1) {
                             hasil++;
+                            while (cek && j < arr.length) {
+                                j++;
+                                if (arr[i][j] == 1) {
+                                    if (arr[i - 1][j] == 1) {
+                                        hasil--;
+                                        cek = false;
+                                    }
+                                } else {
+                                    cek = false;
+                                }
+                            }
                         }
                     } else {
                         if (arr[i-1][j] != 1 && arr[i][j-1] != 1) {
-                            hasil++;
+                            if (arr[i-1][j] != 1) {
+                                hasil++;
+                                while (cek && j < arr.length) {
+                                    j++;
+                                    if (arr[i][j] == 1) {
+                                        if (arr[i - 1][j] == 1) {
+                                            hasil--;
+                                            cek = false;
+                                        }
+                                    } else {
+                                        cek = false;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
