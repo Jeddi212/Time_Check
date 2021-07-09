@@ -27,12 +27,11 @@ public class ObjDetect {
                     } else if (j == 0) {
                         if (arr[i-1][j] != 1) {
                             hasil++;
-                            while (cek && j < arr.length) {
+                            while (cek && j < arr[i].length) {
                                 j++;
                                 if (arr[i][j] == 1) {
                                     if (arr[i - 1][j] == 1) {
                                         hasil--;
-                                        cek = false;
                                     }
                                 } else {
                                     cek = false;
@@ -42,12 +41,11 @@ public class ObjDetect {
                     } else {
                         if (arr[i-1][j] != 1 && arr[i][j-1] != 1) {
                             hasil++;
-                            while (cek && j < arr.length) {
+                            while (cek && j < arr[i].length) {
                                 j++;
                                 if (arr[i][j] == 1) {
                                     if (arr[i - 1][j] == 1) {
                                         hasil--;
-                                        cek = false;
                                     }
                                 } else {
                                     cek = false;
