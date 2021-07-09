@@ -1,8 +1,6 @@
 package com;
 
-import static com.Detect.ObjDetect.objDetect;
-import static com.Detect.ObjDetect.objKel3;
-import static com.Rotate.RotateImage.*;
+import static com.Detect.ObjDetect.*;
 
 public class Main {
 
@@ -374,7 +372,7 @@ public class Main {
 
         // OBJECT DETECT ARRAY
         objDetect(warr8);
-        objKel3(warr1);
+//        objKel3(warr1);
 
     }
 }
