@@ -96,10 +96,10 @@ public class ObjDetect {
             }
         }
 
-        System.out.println(
-                "Banyak objek \n" +
-                "dalam array  = " + hasil
-        );
+//        System.out.println(
+//                "Banyak objek \n" +
+//                "dalam array  = " + hasil
+//        );
     }
 
     public static void objKel3(int[][] arr_grid) {
@@ -147,14 +147,14 @@ public class ObjDetect {
                             cek = false;
                         }
                     }
-                    System.out.print(arr_grid[i][j] + " ");
+//                    System.out.print(arr_grid[i][j] + " ");
                 }
-                System.out.println();
+//                System.out.println();
             }
-            System.out.println();
+//            System.out.println();
         }
-        System.out.println();
-        System.out.println();
+//        System.out.println();
+//        System.out.println();
 
         Set<Integer> hashSet = new HashSet<>();
 
@@ -163,7 +163,53 @@ public class ObjDetect {
                 hashSet.add(arr_grid[i][j]);
             }
         }
-        System.out.println("\nBanyak = " + (hashSet.size() - 1));
+//        System.out.println("\nBanyak = " + (hashSet.size() - 1));
+    }
+
+    public static void checkKel1(int N, int[][] arr) {
+
+        //! Get Start Time
+        long startTime = System.nanoTime();
+
+        //! Loop Bubble Sort
+        for (int i = 0; i < N; i++) {
+            objDetect(arr);
+        }
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah data = " + arr.length * arr[0].length);
+        System.out.println("Jumlah loop = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses Objek Detection Kel 1 = " + (timeElapsed / N) + " NanoSecond");
+
+    }
+
+    public static void checkKel3(int N, int[][] arr) {
+
+        //! Get Start Time
+        long startTime = System.nanoTime();
+
+        //! Loop Bubble Sort
+        for (int i = 0; i < N; i++) {
+            objKel3(arr);
+        }
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah data = " + arr.length * arr[0].length);
+        System.out.println("Jumlah loop = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses Objek Detection Kel 3 = " + (timeElapsed / N) + " NanoSecond");
+
     }
 
 }

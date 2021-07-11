@@ -371,8 +371,13 @@ public class Main {
 //        printArr(rotateKanan(rarr9));
 
         // OBJECT DETECT ARRAY
-        objDetect(warr8);
+//        objDetect(warr8);
 //        objKel3(warr1);
 
+        checkKel1(N, warr15);
+        System.out.println();
+
+        checkKel3(N, warr15);
+        System.out.println();
     }
 }
