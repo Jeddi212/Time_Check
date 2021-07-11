@@ -171,7 +171,7 @@ public class ObjDetect {
         //! Get Start Time
         long startTime = System.nanoTime();
 
-        //! Loop Bubble Sort
+        //! Loop Object Detection Kel 1
         for (int i = 0; i < N; i++) {
             objDetect(arr);
         }
@@ -194,7 +194,7 @@ public class ObjDetect {
         //! Get Start Time
         long startTime = System.nanoTime();
 
-        //! Loop Bubble Sort
+        //! Loop Object Detection Kel 3
         for (int i = 0; i < N; i++) {
             objKel3(arr);
         }

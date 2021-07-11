@@ -116,10 +116,10 @@ public class RotateImage {
     }
 
     public static int[][] rotateKel2(int[][] matrix) {
-        int[][] hasil = new int[matrix.length][matrix[0].length];
+        int[][] hasil = new int[matrix[0].length][matrix.length];
 
-        for (int i = 0; i < matrix.length; ++i) {
-            for (int j = 0; j < matrix[i].length; ++j) {
+        for (int i = 0; i < hasil.length; ++i) {
+            for (int j = 0; j < hasil[i].length; ++j) {
                 hasil[i][j] = matrix[matrix.length - j - 1][i];
             }
         }
@@ -143,7 +143,7 @@ public class RotateImage {
         //! Get Start Time
         long startTime = System.nanoTime();
 
-        //! Loop Bubble Sort
+        //! Loop Rotate Kanan
         for (int i = 0; i < N; i++) {
             rotateKanan(arr);
         }
@@ -166,7 +166,7 @@ public class RotateImage {
         //! Get Start Time
         long startTime = System.nanoTime();
 
-        //! Loop Bubble Sort
+        //! Loop Rotate Kiri
         for (int i = 0; i < N; i++) {
             rotateKiri(arr);
         }
@@ -189,7 +189,7 @@ public class RotateImage {
         //! Get Start Time
         long startTime = System.nanoTime();
 
-        //! Loop Bubble Sort
+        //! Loop CLock Wise
         for (int i = 0; i < N; i++) {
             clockwise(arr);
         }
@@ -212,9 +212,32 @@ public class RotateImage {
         //! Get Start Time
         long startTime = System.nanoTime();
 
-        //! Loop Bubble Sort
+        //! Loop Anti Clockwise
         for (int i = 0; i < N; i++) {
             antiClockwise(arr);
+        }
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah data = " + arr.length);
+        System.out.println("Jumlah loop = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses Rotate 3 = " + (timeElapsed / N) + " NanoSecond");
+
+    }
+
+    public static void checkKel2(int N, int[][] arr)
+    {
+        //! Get Start Time
+        long startTime = System.nanoTime();
+
+        //! Loop Rotate Image Kel 2
+        for (int i = 0; i < N; i++) {
+            rotateKel2(arr);
         }
 
         //! Get Finish Time

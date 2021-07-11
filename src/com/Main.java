@@ -371,7 +371,7 @@ public class Main {
 //        System.out.println();
 //        printArr(rotateKanan(rarr9));
 
-//        printArr(rotateKel2(rarr9));
+//        printArr(rotateKel2(warr1));
 //        System.out.println();
 
         // OBJECT DETECT ARRAY
