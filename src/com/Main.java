@@ -1,6 +1,7 @@
 package com;
 
 import static com.Detect.ObjDetect.*;
+import static com.Rotate.RotateImage.*;
 
 public class Main {
 
@@ -369,6 +370,9 @@ public class Main {
 //        checkRotateKanan(N, rarr9);
 //        System.out.println();
 //        printArr(rotateKanan(rarr9));
+
+//        printArr(rotateKel2(rarr9));
+//        System.out.println();
 
         // OBJECT DETECT ARRAY
 //        objDetect(warr8);

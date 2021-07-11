@@ -115,6 +115,18 @@ public class RotateImage {
         return matrix;
     }
 
+    public static int[][] rotateKel2(int[][] matrix) {
+        int[][] hasil = new int[matrix.length][matrix[0].length];
+
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[i].length; ++j) {
+                hasil[i][j] = matrix[matrix.length - j - 1][i];
+            }
+        }
+
+        return hasil;
+    }
+
     public static void printArr(int[][] matrix)
     {
         for (int[] baris : matrix) {
