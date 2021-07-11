@@ -97,6 +97,19 @@ public class Main {
     };
 
     static
+    int[][] rarr91 = {
+            {1,1,1,1,1,1,1,1},
+            {2,2,2,2,2,2,2,2},
+            {3,3,3,3,3,3,3,3},
+            {4,4,4,4,4,4,4,4},
+            {5,5,5,5,5,5,5,5},
+            {6,6,6,6,6,6,6,6},
+            {7,7,7,7,7,7,7,7},
+            {8,8,8,8,8,8,8,8},
+            {9,9,9,9,9,9,9,9},
+    };
+
+    static
     int[][] warr4 = {
             {1,1,1,1},
             {1,0,0,1},
@@ -371,7 +384,10 @@ public class Main {
 //        System.out.println();
 //        printArr(rotateKanan(rarr9));
 
-//        printArr(rotateKel2(warr1));
+//        printArr(rotateKel2Kanan(warr91));
+//        System.out.println();
+
+//        printArr(rotateKel2Kiri(rarr91));
 //        System.out.println();
 
         // OBJECT DETECT ARRAY

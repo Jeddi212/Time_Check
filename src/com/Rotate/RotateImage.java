@@ -115,7 +115,8 @@ public class RotateImage {
         return matrix;
     }
 
-    public static int[][] rotateKel2(int[][] matrix) {
+    // Method Rotate Image Kel 2
+    public static int[][] rotateKel2Kanan(int[][] matrix) {
         int[][] hasil = new int[matrix[0].length][matrix.length];
 
         for (int i = 0; i < hasil.length; ++i) {
@@ -127,6 +128,19 @@ public class RotateImage {
         return hasil;
     }
 
+    public static int[][] rotateKel2Kiri(int[][] matrix) {
+        int[][] hasil = new int[matrix[0].length][matrix.length];
+
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[i].length; ++j) {
+                hasil[j][i] = matrix[i][j];
+            }
+        }
+
+        return hasil;
+    }
+
+    // Utilities
     public static void printArr(int[][] matrix)
     {
         for (int[] baris : matrix) {
@@ -237,7 +251,30 @@ public class RotateImage {
 
         //! Loop Rotate Image Kel 2
         for (int i = 0; i < N; i++) {
-            rotateKel2(arr);
+            rotateKel2Kanan(arr);
+        }
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah data = " + arr.length);
+        System.out.println("Jumlah loop = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses Rotate 3 = " + (timeElapsed / N) + " NanoSecond");
+
+    }
+
+    public static void checkKel2Lainnya(int N, int[][] arr)
+    {
+        //! Get Start Time
+        long startTime = System.nanoTime();
+
+        //! Loop Rotate Image Kel 2
+        for (int i = 0; i < N; i++) {
+            rotateKel2Kiri(arr);
         }
 
         //! Get Finish Time
