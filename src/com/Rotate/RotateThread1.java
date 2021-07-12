@@ -12,13 +12,19 @@ import static com.Main.rarr9;
  */
 public class RotateThread1 extends Thread {
 
+    int N;
+
+    public RotateThread1(int n) {
+        this.N = n;
+    }
+
     // Method Rotate Image Kel 3
     public static void rotateKel3Thread1(int[][] matrix)
     {
         int i, j, temp;
         int N = matrix.length;
 
-        for (i = 1; i < N / 2; i++) {
+        for (i = 0; i < N / 2; i++) {
             for (j = i; j < N - i - 1; j++) {
                 // Atas -> Temp
                 temp = matrix[i][j];
@@ -41,7 +47,9 @@ public class RotateThread1 extends Thread {
 
     @Override
     public void run() {
-        rotateKel3Thread1(rarr9);
+        for (int i = 0; i < N; i++) {
+            rotateKel3Thread1(rarr9);
+        }
     }
 
 }

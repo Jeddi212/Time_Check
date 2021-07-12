@@ -1,6 +1,7 @@
 package com;
 
 import com.Rotate.RotateThread1;
+import com.Rotate.RotateThread2;
 
 import static com.Detect.ObjDetect.*;
 import static com.Rotate.RotateImage.*;
@@ -520,23 +521,9 @@ public class Main {
 //        printArr(rotateKel2Kiri(rarr91));
 //        System.out.println();
 
-        // Thread Kel 3
-        RotateThread1 rThread1 = new RotateThread1();
-        RotateThread1 rThread2 = new RotateThread1();
+        // THREAD KEL 3
+        checkRotateKel3(N, rarr9);
 
-        rThread1.start();
-        rThread2.start();
-
-        try { //main thread menunggu kedua thread ini finish
-            rThread1.join();
-            rThread2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.print("Thread Finish--------------------\n\n");
-
-        printArr(rarr9);
     }
 
 }

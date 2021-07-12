@@ -169,6 +169,22 @@ public class RotateImage {
         return hasil;
     }
 
+    // Method Rotate Image Kel 3
+    public static void rotateKel3(int[][] matrix, RotateThread1 rThread1, RotateThread2 rThread2)
+    {
+        rThread1.start();
+        rThread2.start();
+
+        try { //main thread menunggu kedua thread ini finish
+            rThread1.join();
+            rThread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+         // System.out.print("Thread Finish--------------------\n\n");
+    }
+
     // Utilities
     public static void printArr(int[][] matrix)
     {
@@ -200,7 +216,7 @@ public class RotateImage {
         System.out.println("Jumlah data = " + arr.length);
         System.out.println("Jumlah loop = " + N);
         System.out.println("-------------------------------------------");
-        System.out.println("Lama Proses Rotate 1 = " + (timeElapsed / N) + " NanoSecond");
+        System.out.println("Lama Proses Rotate Kanan = " + (timeElapsed / N) + " NanoSecond");
 
     }
 
@@ -223,7 +239,7 @@ public class RotateImage {
         System.out.println("Jumlah data = " + arr.length);
         System.out.println("Jumlah loop = " + N);
         System.out.println("-------------------------------------------");
-        System.out.println("Lama Proses Rotate 1 = " + (timeElapsed / N) + " NanoSecond");
+        System.out.println("Lama Proses Rotate Kiri = " + (timeElapsed / N) + " NanoSecond");
 
     }
 
@@ -246,7 +262,7 @@ public class RotateImage {
         System.out.println("Jumlah data = " + arr.length);
         System.out.println("Jumlah loop = " + N);
         System.out.println("-------------------------------------------");
-        System.out.println("Lama Proses Rotate 2 = " + (timeElapsed / N) + " NanoSecond");
+        System.out.println("Lama Proses Rotate ClockWise = " + (timeElapsed / N) + " NanoSecond");
 
     }
 
@@ -269,11 +285,11 @@ public class RotateImage {
         System.out.println("Jumlah data = " + arr.length);
         System.out.println("Jumlah loop = " + N);
         System.out.println("-------------------------------------------");
-        System.out.println("Lama Proses Rotate 3 = " + (timeElapsed / N) + " NanoSecond");
+        System.out.println("Lama Proses Rotate Anti Clockwise = " + (timeElapsed / N) + " NanoSecond");
 
     }
 
-    public static void checkKel2(int N, int[][] arr)
+    public static void checkRotateKel2(int N, int[][] arr)
     {
         //! Get Start Time
         long startTime = System.nanoTime();
@@ -292,11 +308,11 @@ public class RotateImage {
         System.out.println("Jumlah data = " + arr.length);
         System.out.println("Jumlah loop = " + N);
         System.out.println("-------------------------------------------");
-        System.out.println("Lama Proses Rotate 3 = " + (timeElapsed / N) + " NanoSecond");
+        System.out.println("Lama Proses Rotate Kel 2 = " + (timeElapsed / N) + " NanoSecond");
 
     }
 
-    public static void checkKel2Lainnya(int N, int[][] arr)
+    public static void checkRotateKel2Lainnya(int N, int[][] arr)
     {
         //! Get Start Time
         long startTime = System.nanoTime();
@@ -315,16 +331,32 @@ public class RotateImage {
         System.out.println("Jumlah data = " + arr.length);
         System.out.println("Jumlah loop = " + N);
         System.out.println("-------------------------------------------");
-        System.out.println("Lama Proses Rotate 3 = " + (timeElapsed / N) + " NanoSecond");
+        System.out.println("Lama Proses Rotate Kel 2 Lainnya = " + (timeElapsed / N) + " NanoSecond");
 
     }
 
-/*    checkClockwise(N, rarr9);
-        System.out.println();
-//        printArr(clockwise(rarr9));
+    public static void checkRotateKel3(int N, int[][] arr)
+    {
+        RotateThread1 rThread1 = new RotateThread1(N);
+        RotateThread2 rThread2 = new RotateThread2(N);
 
-    checkAntiClockwise(N, rarr9);
-        System.out.println();
-//        printArr(antiClockwise(rarr9));*/
+        //! Get Start Time
+        long startTime = System.nanoTime();
+
+        //! Run Thread
+        rotateKel3(arr, rThread1, rThread2);
+
+        //! Get Finish Time
+        long endTime = System.nanoTime();
+
+        //! Calculate Process Time
+        long timeElapsed = endTime - startTime;
+
+        System.out.println("Jumlah data = " + arr.length);
+        System.out.println("Jumlah loop = " + N);
+        System.out.println("-------------------------------------------");
+        System.out.println("Lama Proses Rotate Kel 3 (Thread) = " + (timeElapsed / N) + " NanoSecond");
+
+    }
 
 }
