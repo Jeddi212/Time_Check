@@ -521,10 +521,6 @@ public class Main {
 //        System.out.println();
 
         // Thread Kel 3
-//        Main obj = new Main();
-//        Thread thread = new Thread(obj);
-//        thread.start();
-
         RotateThread1 rThread1 = new RotateThread1();
         RotateThread1 rThread2 = new RotateThread1();
 
