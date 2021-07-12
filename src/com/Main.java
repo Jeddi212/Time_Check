@@ -1,9 +1,11 @@
 package com;
 
+import com.Rotate.RotateThread1;
+
 import static com.Detect.ObjDetect.*;
 import static com.Rotate.RotateImage.*;
 
-public class Main implements Runnable {
+public class Main {
 
     // GLOBAL VARIABLE
     static int N = 100_000;
@@ -83,7 +85,7 @@ public class Main implements Runnable {
             {8,8,8,8,8,8,8,8},
     };
 
-    static
+    public static
     int[][] rarr9 = {
             {1,1,1,1,1,1,1,1,1},
             {2,2,2,2,2,2,2,2,2},
@@ -333,7 +335,7 @@ public class Main implements Runnable {
             {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,1}
     };
 
-    static
+    /*static
     int[][] rarr100 = {
             {1, 1, 2, 2, 2, 1, 2, 1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1, 1},
             {0, 2, 1, 2, 2, 1, 2, 1, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 2, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 1},
@@ -435,8 +437,7 @@ public class Main implements Runnable {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-    };
-
+    };*/
 
     // PRINT MEMORY USAGE
     private static void printMemory() {
@@ -520,13 +521,26 @@ public class Main implements Runnable {
 //        System.out.println();
 
         // Thread Kel 3
-        Main obj = new Main();
-        Thread thread = new Thread(obj);
-        thread.start();
+//        Main obj = new Main();
+//        Thread thread = new Thread(obj);
+//        thread.start();
+
+        RotateThread1 rThread1 = new RotateThread1();
+        RotateThread1 rThread2 = new RotateThread1();
+
+        rThread1.start();
+        rThread2.start();
+
+        try { //main thread menunggu kedua thread ini finish
+            rThread1.join();
+            rThread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.print("Thread Finish--------------------\n\n");
+
+        printArr(rarr9);
     }
 
-    @Override
-    public void run() {
-
-    }
 }

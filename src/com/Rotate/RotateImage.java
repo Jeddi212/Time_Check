@@ -169,32 +169,6 @@ public class RotateImage {
         return hasil;
     }
 
-    // Method Rotate Image Kel 3
-    public static void rotateKel3(int[][] matrix)
-    {
-        int i, j, temp;
-        int N = matrix.length;
-
-        for (i = 0; i < N / 2; i++) {
-            for (j = i; j < N - i - 1; j++) {
-                // Atas -> Temp
-                temp = matrix[i][j];
-
-                // Kiri -> Atas
-                matrix[i][j] = matrix[N - 1 - j][i];
-
-                // Bawah -> Kiri
-                matrix[N - 1 - j][i] = matrix[N - 1 - i][N - 1 - j];
-
-                // Kanan -> Bawah
-                matrix[N - 1 - i][N - 1 - j] = matrix[j][N - 1 - i];
-
-                // Temp -> Kanan
-                matrix[j][N - 1 - i] = temp;
-            }
-        }
-    }
-
     // Utilities
     public static void printArr(int[][] matrix)
     {
