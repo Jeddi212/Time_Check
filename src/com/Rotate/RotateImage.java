@@ -64,7 +64,7 @@ public class RotateImage {
     }
 
     // Method Rotate Image 2
-    public static int[][] clockwise(int[][] matrix)
+    public static int[][] clockwise_90(int[][] matrix)
     {
         int first, last, offset, temp;
         int N = matrix.length;
@@ -89,6 +89,32 @@ public class RotateImage {
         return matrix;
     }
 
+    public static int[][] clockwise(int[][] matrix)
+    {
+        int i, j, temp;
+        int N = matrix.length;
+
+        for (i = 0; i < N / 2; i++) {
+            for (j = i; j < N - i - 1; j++) {
+                // Atas -> Temp
+                temp = matrix[i][j];
+
+                // Kiri -> Atas
+                matrix[i][j] = matrix[N - 1 - j][i];
+
+                // Bawah -> Kiri
+                matrix[N - 1 - j][i] = matrix[N - 1 - i][N - 1 - j];
+
+                // Kanan -> Bawah
+                matrix[N - 1 - i][N - 1 - j] = matrix[j][N - 1 - i];
+
+                // Temp -> Kanan
+                matrix[j][N - 1 - i] = temp;
+            }
+        }
+        return matrix;
+    }
+
     public static int[][] antiClockwise(int[][] matrix)
     {
         int i, j, temp;
@@ -96,18 +122,19 @@ public class RotateImage {
 
         for (i = 0; i < N / 2; i++) {
             for (j = i; j < N - i - 1; j++) {
+                // Atas -> Temp
                 temp = matrix[i][j];
 
-                // Move values from right to top
+                // Kanan -> Atas
                 matrix[i][j] = matrix[j][N - 1 - i];
 
-                // Move values from bottom to right
+                // Bawah -> Kanan
                 matrix[j][N - 1 - i] = matrix[N - 1 - i][N - 1 - j];
 
-                // Move values from left to bottom
+                // Kiri -> Bawah
                 matrix[N - 1 - i][N - 1 - j] = matrix[N - 1 - j][i];
 
-                // Assign temp to left
+                // Temp -> Kiri
                 matrix[N - 1 - j][i] = temp;
             }
         }
@@ -116,7 +143,8 @@ public class RotateImage {
     }
 
     // Method Rotate Image Kel 2
-    public static int[][] rotateKel2Kanan(int[][] matrix) {
+    public static int[][] rotateKel2Kanan(int[][] matrix)
+    {
         int[][] hasil = new int[matrix[0].length][matrix.length];
 
         for (int i = 0; i < hasil.length; ++i) {
@@ -128,7 +156,8 @@ public class RotateImage {
         return hasil;
     }
 
-    public static int[][] rotateKel2Kiri(int[][] matrix) {
+    public static int[][] rotateKel2Kiri(int[][] matrix)
+    {
         int[][] hasil = new int[matrix[0].length][matrix.length];
 
         for (int i = 0; i < matrix.length; ++i) {
@@ -138,6 +167,32 @@ public class RotateImage {
         }
 
         return hasil;
+    }
+
+    // Method Rotate Image Kel 3
+    public static void rotateKel3(int[][] matrix)
+    {
+        int i, j, temp;
+        int N = matrix.length;
+
+        for (i = 0; i < N / 2; i++) {
+            for (j = i; j < N - i - 1; j++) {
+                // Atas -> Temp
+                temp = matrix[i][j];
+
+                // Kiri -> Atas
+                matrix[i][j] = matrix[N - 1 - j][i];
+
+                // Bawah -> Kiri
+                matrix[N - 1 - j][i] = matrix[N - 1 - i][N - 1 - j];
+
+                // Kanan -> Bawah
+                matrix[N - 1 - i][N - 1 - j] = matrix[j][N - 1 - i];
+
+                // Temp -> Kanan
+                matrix[j][N - 1 - i] = temp;
+            }
+        }
     }
 
     // Utilities

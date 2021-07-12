@@ -382,7 +382,7 @@ public class Main {
 //
 //        checkRotateKanan(N, rarr9);
 //        System.out.println();
-//        printArr(rotateKanan(rarr9));
+//        printArr(clockwise(rarr9));
 
 //        printArr(rotateKel2Kanan(warr91));
 //        System.out.println();
