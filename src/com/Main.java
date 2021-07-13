@@ -100,7 +100,20 @@ public class Main {
     };
 
     static
-    int[][] rarr91 = {
+    int[][] rarr92 = {
+            {1,1},
+            {2,2},
+            {3,3},
+            {4,4},
+            {5,5},
+            {6,6},
+            {7,7},
+            {8,8},
+            {9,9},
+    };
+
+    static
+    int[][] rarr98 = {
             {1,1,1,1,1,1,1,1},
             {2,2,2,2,2,2,2,2},
             {3,3,3,3,3,3,3,3},
@@ -515,7 +528,7 @@ public class Main {
 //        System.out.println();
 //        printArr(clockwise(rarr9));
 
-//        printArr(rotateKel2Kanan(warr91));
+//        printArr(rotateKel2Kanan(rarr9));
 //        System.out.println();
 
 //        printArr(rotateKel2Kiri(rarr91));
