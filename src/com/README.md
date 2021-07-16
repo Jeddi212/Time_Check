@@ -1,3 +1,7 @@
+*Link github*
+https://github.com/Jeddi212/Time_Check
+<br>
+<hr>
 *Contoh pemanggilan di main*
 
         // FOR
