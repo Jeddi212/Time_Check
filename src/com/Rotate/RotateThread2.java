@@ -17,6 +17,7 @@ public class RotateThread2 extends Thread {
 
     public RotateThread2(int n, int[][] arr) {
         this.N = n;
+        this.arr = arr;
     }
 
     // Method Rotate Image Kel 3
