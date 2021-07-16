@@ -364,19 +364,28 @@ public class Main {
 
     // PSV MAIN
     public static void main(String[] args) {
+
+        // GENERATE ARRAY 1000
         for (int k=0;k<1000;k++) {
             for (int l=0;l<1000;l++) {
                 rarr1000[k][l] = k+1;
             }
-        }for (int k=0;k<100;k++) {
+        }
+
+        // GENERATE ARRAY 100
+        for (int k=0;k<100;k++) {
             for (int l=0;l<100;l++) {
                 rarr100[k][l] = k+1;
             }
-        }for (int k=0;k<10;k++) {
+        }
+
+        // GENERATE ARRAY 10
+        for (int k=0;k<10;k++) {
             for (int l=0;l<10;l++) {
                 rarr10[k][l] = k+1;
             }
         }
+
         // FOR
         /*checkFOR();*/
 
@@ -424,38 +433,40 @@ public class Main {
         /*checkBFS(N);*/
 
         // OBJECT DETECT ARRAY
-//        objDetect(warr8);
-//        objKel3(warr1);
+        /*objDetect(warr8);
+        objKel3(warr1);
 
-//        checkKel1(N, warr15);
-//        System.out.println();
+        checkKel1(N, warr15);
+        System.out.println();
 
-//        checkKel3(N, warr15);
-//        System.out.println();
+        checkKel3(N, warr15);
+        System.out.println();*/
 
         // ROTATE IMAGE
-//        printArr(rarr9);
-//        System.out.println();
-//
-//        checkRotateKanan(N, rarr9);
-//        System.out.println();
-//        printArr(clockwise(rarr9));
+        /*printArr(rarr9);
+        System.out.println();
 
-//        printArr(rotateKel2Kanan(rarr9));
-//        System.out.println();
+        checkRotateKanan(N, rarr9);
+        System.out.println();
+        printArr(clockwise(rarr9));
 
-//        printArr(rotateKel2Kiri(rarr91));
-//        System.out.println();
+        printArr(rotateKel2Kanan(rarr9));
+        System.out.println();
 
-        // THREAD KEL 3
-//        checkRotateKel3(N, rarr9);
-//        checkRotateKel3(N, rarr10);
-//        checkRotateKel3(N, rarr100);
-//        checkRotateKel3(N, rarr1000);
-        checkClockwise(N, rarr9);
+        printArr(rotateKel2Kiri(rarr92));
+        System.out.println();*/
+
+        // CYCLE SWAPPING
+        /*checkClockwise(N, rarr9);
         checkClockwise(N, rarr10);
         checkClockwise(N, rarr100);
-        checkClockwise(N, rarr1000);
+        checkClockwise(N, rarr1000);*/
+
+        // THREAD KEL 3
+        checkRotateKel3(N, rarr9);
+        checkRotateKel3(N, rarr10);
+        checkRotateKel3(N, rarr100);
+        checkRotateKel3(N, rarr1000);
     }
 
 }
