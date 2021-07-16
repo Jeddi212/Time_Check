@@ -13,8 +13,9 @@ import static com.Main.rarr9;
 public class RotateThread2 extends Thread {
 
     int N;
+    int[][] arr;
 
-    public RotateThread2(int n) {
+    public RotateThread2(int n, int[][] arr) {
         this.N = n;
     }
 
@@ -48,7 +49,7 @@ public class RotateThread2 extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < N; i++) {
-            rotateKel3Thread2(rarr9);
+            rotateKel3Thread2(arr);
         }
     }
 }

@@ -170,7 +170,7 @@ public class RotateImage {
     }
 
     // Method Rotate Image Kel 3
-    public static void rotateKel3(int[][] matrix, RotateThread1 rThread1, RotateThread2 rThread2)
+    public static void rotateKel3(RotateThread1 rThread1, RotateThread2 rThread2)
     {
         rThread1.start();
         rThread2.start();
@@ -337,14 +337,14 @@ public class RotateImage {
 
     public static void checkRotateKel3(int N, int[][] arr)
     {
-        RotateThread1 rThread1 = new RotateThread1(N);
-        RotateThread2 rThread2 = new RotateThread2(N);
+        RotateThread1 rThread1 = new RotateThread1(N, arr);
+        RotateThread2 rThread2 = new RotateThread2(N, arr);
 
         //! Get Start Time
         long startTime = System.nanoTime();
 
         //! Run Thread
-        rotateKel3(arr, rThread1, rThread2);
+        rotateKel3(rThread1, rThread2);
 
         //! Get Finish Time
         long endTime = System.nanoTime();
