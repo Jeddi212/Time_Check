@@ -19,14 +19,14 @@ public class Recursive {
         }
     }
 
-    public static void checkRecursive() {
+    public static void checkRecursive(int n) {
         long startTime = System.currentTimeMillis();
 
         long hasil = 0;
 
         // LOOP
         for (int i = 0; i < 1000000; i++) {
-            hasil = factorialRecursive(33);
+            hasil = factorialRecursive(n);
         }
 
         System.out.print(hasil);
